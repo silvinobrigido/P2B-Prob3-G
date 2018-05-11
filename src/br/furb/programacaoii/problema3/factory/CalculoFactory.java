@@ -24,6 +24,6 @@ public abstract class CalculoFactory {
 		case SEDEX:
 			return CalculoSedex.getInstance();
 		}
-            return null;
+            throw new NullPointerException("Classe Incorreta!!");
 	}
 }

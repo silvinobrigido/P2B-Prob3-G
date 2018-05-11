@@ -12,9 +12,17 @@ import br.furb.programacaoii.problema3.model.Pedido;
  * @author silvinos
  */
 public class CalculoSedex implements CalculoEntrega {
-
+    
+     private static CalculoSedex instance;
+    
+    private CalculoSedex() {
+    }
+    
     public static CalculoEntrega getInstance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (null == instance) {
+			instance = new CalculoSedex();
+		}
+		return instance;
     }
 
     @Override
