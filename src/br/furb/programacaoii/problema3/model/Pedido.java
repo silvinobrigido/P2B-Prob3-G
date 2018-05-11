@@ -9,6 +9,8 @@ public class Pedido {
 	private String nomeCliente;
 	private Date data;
 	private String endereco;
+	private double valorEntrega;
+	private ModalidadeFrete modalidadeFrete;
 	private ArrayList<ItemPedido> itens;
 
 	public Pedido() {
@@ -56,6 +58,30 @@ public class Pedido {
 			valorTotal += (ip.getValorItem());
 		}
 		return valorTotal;
+	}
+
+	public double getValorEntrega() {
+		return valorEntrega;
+	}
+
+	public void setValorEntrega(double valorEntrega) {
+		this.valorEntrega = valorEntrega;
+	}
+
+	public double getValorTotal() {
+		return getValorPedido() + getValorEntrega();
+	}
+
+	public ModalidadeFrete getModalidadeFrete() {
+		return modalidadeFrete;
+	}
+
+	public void setModalidadeFrete(ModalidadeFrete modalidadeFrete) {
+		this.modalidadeFrete = modalidadeFrete;
+	}
+
+	public ArrayList<ItemPedido> getItens() {
+		return itens;
 	}
 
 }

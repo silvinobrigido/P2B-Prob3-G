@@ -6,13 +6,17 @@
 package br.furb.programacaoii.problema3.exception;
 
 /**
+ * Define a exception para o tipo de entrega inválido. Utilizado quando a
+ * ModalidadeFrete não atende a um pedido.
  *
  * @author jardelangelo
  */
-public class TipoEntregaInvalido extends RuntimeException {
-    
-    public TipoEntregaInvalido(){
-        super("O tipo de entrega é inválido.");
-    }
-    
+public class TipoEntregaInvalido extends ControllerException {
+
+	private static final long serialVersionUID = 1L;
+
+	public TipoEntregaInvalido() {
+		super("O tipo de entrega é inválido!");
+	}
+
 }
