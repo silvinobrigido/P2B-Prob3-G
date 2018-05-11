@@ -2,8 +2,6 @@ package br.furb.programacaoii.problema3.factory;
 
 import br.furb.programacaoii.problema3.controller.calculo.CalculoEntrega;
 import br.furb.programacaoii.problema3.controller.calculo.CalculoPAC;
-import br.furb.programacaoii.problema3.controller.calculo.CalculoRetiradaLocal;
-import br.furb.programacaoii.problema3.controller.calculo.CalculoSedex;
 import br.furb.programacaoii.problema3.model.ModalidadeFrete;
 import br.furb.programacaoii.problema3.model.Pedido;
 
@@ -24,6 +22,5 @@ public abstract class CalculoFactory {
 		case SEDEX:
 			return CalculoSedex.getInstance();
 		}
-            return null;
 	}
 }
