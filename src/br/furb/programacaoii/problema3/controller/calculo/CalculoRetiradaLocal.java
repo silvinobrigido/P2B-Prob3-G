@@ -12,9 +12,20 @@ import br.furb.programacaoii.problema3.model.Pedido;
  * @author silvinos
  */
 public class CalculoRetiradaLocal implements CalculoEntrega {
+ 
+        
+    private static CalculoRetiradaLocal instance;
+    
+    private CalculoRetiradaLocal() {
+    }
+    
+    
 
     public static CalculoEntrega getInstance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (null == instance) {
+			instance = new CalculoRetiradaLocal();
+		}
+		return instance;
     }
 
     @Override
