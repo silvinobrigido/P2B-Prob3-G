@@ -5,6 +5,9 @@
  */
 package br.furb.programacaoii.problema3.strategy.calculo;
 
+import br.furb.programacaoii.problema3.controller.PedidoController;
+import br.furb.programacaoii.problema3.exception.TipoEntregaInvalido;
+import br.furb.programacaoii.problema3.factory.ControllerFactory;
 import br.furb.programacaoii.problema3.model.Pedido;
 
 /**
