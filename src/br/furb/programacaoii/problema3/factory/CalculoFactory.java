@@ -4,6 +4,7 @@ import br.furb.programacaoii.problema3.controller.calculo.CalculoEntrega;
 import br.furb.programacaoii.problema3.controller.calculo.CalculoPAC;
 import br.furb.programacaoii.problema3.controller.calculo.CalculoRetiradaLocal;
 import br.furb.programacaoii.problema3.controller.calculo.CalculoSedex;
+import br.furb.programacaoii.problema3.exception.ModalidadeFreteNaoInformadaException;
 import br.furb.programacaoii.problema3.model.ModalidadeFrete;
 import br.furb.programacaoii.problema3.model.Pedido;
 
@@ -16,6 +17,10 @@ import br.furb.programacaoii.problema3.model.Pedido;
 public abstract class CalculoFactory {
 
 	public static CalculoEntrega getCalculoEntrega(ModalidadeFrete modalidade) {
+		if (null == modalidade) {
+			throw new ModalidadeFreteNaoInformadaException();
+		}
+
 		switch (modalidade) {
 		case PAC:
 			return CalculoPAC.getInstance();
@@ -23,7 +28,8 @@ public abstract class CalculoFactory {
 			return CalculoRetiradaLocal.getInstance();
 		case SEDEX:
 			return CalculoSedex.getInstance();
+		default:
+			return null;
 		}
-		throw new NullPointerException("Classe Incorreta!!");
 	}
 }
