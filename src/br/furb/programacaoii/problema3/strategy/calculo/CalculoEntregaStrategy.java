@@ -1,4 +1,4 @@
-package br.furb.programacaoii.problema3.controller.calculo;
+package br.furb.programacaoii.problema3.strategy.calculo;
 
 import br.furb.programacaoii.problema3.exception.TipoEntregaInvalido;
 import br.furb.programacaoii.problema3.model.Pedido;
@@ -8,7 +8,7 @@ import br.furb.programacaoii.problema3.model.Pedido;
  *
  * @author ariel
  */
-public interface CalculoEntrega {
+public interface CalculoEntregaStrategy {
 
 	double calcularValorEntrega(Pedido pedido) throws TipoEntregaInvalido;
 }

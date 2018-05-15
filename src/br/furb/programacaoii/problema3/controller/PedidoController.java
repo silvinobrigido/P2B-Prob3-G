@@ -2,7 +2,7 @@ package br.furb.programacaoii.problema3.controller;
 
 import java.util.List;
 
-import br.furb.programacaoii.problema3.controller.calculo.CalculoEntrega;
+import br.furb.programacaoii.problema3.strategy.calculo.CalculoEntregaStrategy;
 import br.furb.programacaoii.problema3.exception.ModalidadeFreteNaoInformadaException;
 import br.furb.programacaoii.problema3.exception.TipoEntregaInvalido;
 import br.furb.programacaoii.problema3.factory.CalculoFactory;
@@ -30,7 +30,7 @@ public class PedidoController extends Controller {
 			throw new ModalidadeFreteNaoInformadaException();
 		}
 
-		CalculoEntrega calculoEntrega = CalculoFactory.getCalculoEntrega(modalidadeFrete);
+		CalculoEntregaStrategy calculoEntrega = CalculoFactory.getCalculoEntrega(modalidadeFrete);
 		double valorEntrega = calculoEntrega.calcularValorEntrega(pedido);
 		pedido.setValorEntrega(valorEntrega);
 	}

@@ -1,4 +1,4 @@
-package br.furb.programacaoii.problema3.controller.calculo;
+package br.furb.programacaoii.problema3.strategy.calculo;
 
 import br.furb.programacaoii.problema3.controller.PedidoController;
 import br.furb.programacaoii.problema3.exception.TipoEntregaInvalido;
@@ -11,7 +11,7 @@ import br.furb.programacaoii.problema3.model.Pedido;
  *
  * @author ariel
  */
-public class CalculoPAC implements CalculoEntrega {
+public class CalculoPAC implements CalculoEntregaStrategy {
 
 	private static final int UM_KG = 1000;
 	private static final int DOIS_KG = 2000;
