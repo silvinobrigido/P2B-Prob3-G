@@ -31,7 +31,7 @@ public class CalculoSedex implements CalculoEntregaStrategy {
 	}
 
 	@Override
-	public double calcularValorEntrega(Pedido pedido) throws TipoEntregaInvalido {
+	public double calcularValorEntrega(Pedido pedido) {
                 int pesoPedido = ControllerFactory.getController(PedidoController.class).getPesoPedido(pedido);
                 if(pesoPedido <= P_500_G){
                     return DOZE_REAIS;
@@ -42,10 +42,12 @@ public class CalculoSedex implements CalculoEntregaStrategy {
                 } else if(pesoPedido >= UM_KG_E_200 && pesoPedido <=DOIS_KG){
                     return QUARENTA_CINCO_REAIS;
                 } else if(pesoPedido > DOIS_KG){
-                    return QUARENTA_CINCO_REAIS; //TO-DO VALOR EXCEDIDO
-                }
-                
-		throw new TipoEntregaInvalido();
+                    return QUARENTA_CINCO_REAIS; 
+                } else{                    
+                    double valorAcima = (pesoPedido - DOIS_KG)/100;                    
+                    return QUARENTA_CINCO_REAIS + valorAcima;
+                }                
+		
 	}
 
 }
