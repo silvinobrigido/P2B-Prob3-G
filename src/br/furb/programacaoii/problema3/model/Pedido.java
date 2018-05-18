@@ -11,7 +11,7 @@ public class Pedido {
 	private String endereco;
 	private double valorEntrega;
 	private ModalidadeFrete modalidadeFrete;
-	private ArrayList<ItemPedido> itens;
+	private ArrayList<ItemPedido> itens = new ArrayList<ItemPedido>();
 
 	public Pedido() {
 	}
