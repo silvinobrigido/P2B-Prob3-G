@@ -4,6 +4,7 @@ import br.furb.programacaoii.problema3.strategy.calculo.CalculoEntregaStrategy;
 import br.furb.programacaoii.problema3.strategy.calculo.CalculoPAC;
 import br.furb.programacaoii.problema3.strategy.calculo.CalculoRetiradaLocal;
 import br.furb.programacaoii.problema3.strategy.calculo.CalculoSedex;
+import br.furb.programacaoii.problema3.strategy.calculo.CalculoMotoboy;
 import br.furb.programacaoii.problema3.exception.ModalidadeFreteNaoInformadaException;
 import br.furb.programacaoii.problema3.model.ModalidadeFrete;
 import br.furb.programacaoii.problema3.model.Pedido;
@@ -28,6 +29,8 @@ public abstract class CalculoFactory {
 			return CalculoRetiradaLocal.getInstance();
 		case SEDEX:
 			return CalculoSedex.getInstance();
+                case MOTOBOY:
+			return CalculoMotoboy.getInstance();
 		default:
 			return null;
 		}

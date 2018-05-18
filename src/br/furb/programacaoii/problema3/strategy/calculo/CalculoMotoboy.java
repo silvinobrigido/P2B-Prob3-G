@@ -30,7 +30,7 @@ public class CalculoMotoboy implements CalculoEntregaStrategy {
     }
 
     @Override
-    public double calcularValorEntrega (Pedido pedido) {
+    public double calcularValorEntrega (Pedido pedido) throws TipoEntregaInvalido {
         int pesoPedido = ControllerFactory.getController(PedidoController.class).getPesoPedido(pedido);
 
         if (pesoPedido > 25 || pedido.getItens().size() > 30) {

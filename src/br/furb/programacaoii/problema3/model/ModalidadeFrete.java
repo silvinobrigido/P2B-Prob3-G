@@ -7,5 +7,5 @@ package br.furb.programacaoii.problema3.model;
  */
 public enum ModalidadeFrete {
 
-	PAC, SEDEX, RETIRADA_LOCAL;
+	PAC, SEDEX, RETIRADA_LOCAL, MOTOBOY;
 }
