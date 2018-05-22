@@ -1,6 +1,12 @@
 Strategy - classes CalculoEntregaStrategy, CalculoMotoboy, CalculoPAC, CalculoRetiradaLocal, CalculoSedex;
 Factory - classes CalculoFactory, ControllerFactory;
 Controller- ItemPedidoController, PedidoController;
+--> Prof. Marcel: e o mapeamento de Singleton?
 
+--> Prof. Marcel: a classe Pedido não deveria ter um atributo "private double valorEntrega" pois este valor é o resultado do cálculo dependendo de alguns fatores: tipo de entrega, peso, quantidade de itens, etc. O método getValorEntrega() deveria se encarregar deste cálculo, usando as estratégias.
 
+--> Prof. Marcel: o uso dos controladores (Controllers) adiciona uma complexidade desnecessária para o problema. Será que todos os membros da equipe entenderam o funcionamento da solução? Do padrão Strategy?
 
+--> Prof. Marcel: o método main não alternou entre diferentes tipos de entrega para o mesmo pedido, como foi solicitado.
+
+--> Prof. Marcel: Nota 2,5
